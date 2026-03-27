@@ -1,4 +1,4 @@
-package org.zhisuan11.gui;
+package org.rd806.zhisuan11.gui;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -7,7 +7,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
-import org.zhisuan11.Zhisuan11core;
+import org.rd806.zhisuan11.Zhisuan11core;
 
 public class GameMenuClick implements Listener {
 
@@ -59,29 +59,6 @@ public class GameMenuClick implements Listener {
                     player.sendMessage("插件作者：RunicDolphin806");
                     player.sendMessage("仓库地址：https://github.com/5882886/My-Minecraft-Server");
                     Zhisuan11core.main.gameMenu.closeMenu(player);
-                    break;
-                default:
-                    break;
-            }
-        } else if (view.getTitle().equals("欢迎来到Quiz")) {
-            event.setCancelled(true);
-            String response;
-            switch (clicked.getType()) {
-                case RED_WOOL:
-                    response = "A";
-                    Zhisuan11core.main.quiz.check(player, response);
-                    break;
-                case YELLOW_WOOL:
-                    response = "B";
-                    Zhisuan11core.main.quiz.check(player, response);
-                    break;
-                case BLUE_WOOL:
-                    response = "C";
-                    Zhisuan11core.main.quiz.check(player, response);
-                    break;
-                case GREEN_WOOL:
-                    response = "D";
-                    Zhisuan11core.main.quiz.check(player, response);
                     break;
                 default:
                     break;

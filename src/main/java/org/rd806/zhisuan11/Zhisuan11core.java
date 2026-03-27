@@ -1,26 +1,22 @@
-package org.zhisuan11;
+package org.rd806.zhisuan11;
 
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import org.zhisuan11.command.MainCommand;
-import org.zhisuan11.command.TeleportCommand;
-import org.zhisuan11.command.CommandTabCompleter;
-import org.zhisuan11.core.*;
-import org.zhisuan11.database.DataSourceManager;
-import org.zhisuan11.database.DatabaseConfig;
-import org.zhisuan11.gui.GameMenu;
-import org.zhisuan11.gui.GameMenuClick;
-import org.zhisuan11.quiz.Quiz;
-import org.zhisuan11.quiz.QuizConfig;
-import org.zhisuan11.quiz.QuizForSql;
-import org.zhisuan11.tasks.Broadcast;
-import org.zhisuan11.tasks.CheckPing;
-import org.zhisuan11.tasks.ClearDropItems;
-import org.zhisuan11.tasks.SeverTask;
+import org.rd806.zhisuan11.command.MainCommand;
+import org.rd806.zhisuan11.command.TeleportCommand;
+import org.rd806.zhisuan11.command.CommandTabCompleter;
+import org.rd806.zhisuan11.core.JoinInfo;
+import org.rd806.zhisuan11.core.JoinItem;
+import org.rd806.zhisuan11.core.Respawn;
+import org.rd806.zhisuan11.core.Sidebar;
+import org.rd806.zhisuan11.gui.GameMenu;
+import org.rd806.zhisuan11.gui.GameMenuClick;
+import org.rd806.zhisuan11.tasks.Broadcast;
+import org.rd806.zhisuan11.tasks.CheckPing;
+import org.rd806.zhisuan11.tasks.ClearDropItems;
+import org.rd806.zhisuan11.tasks.SeverTask;
 
-import java.io.File;
 import java.util.Objects;
 
 
@@ -29,35 +25,19 @@ public final class Zhisuan11core extends JavaPlugin {
     // 全局变量代表主类
     public static Zhisuan11core main;
 
-    // 声明全局类
-    public Quiz quiz;
-    public QuizConfig quizConfig;
-    public QuizForSql quizForSql;
-
     public GameMenu gameMenu;
     public Sidebar sidebar;
     public Broadcast broadcast;
     public ClearDropItems clearDropItems;
     public CheckPing checkPing;
 
-    // 数据库相关
-    public DatabaseConfig databaseConfig;
-    public DataSourceManager dataSourceManager;
-
     public SeverTask severTask;
-
-    // 创建全局变量
-    // 问答类
-    public File QuizFile;
-    public FileConfiguration QuizConfig;
 
     // 构造函数
     public Zhisuan11core() {
         // 应该在构造函数中先赋值静态变量
         main = this;
         // 初始化全局类
-        quiz = new Quiz();
-        quizConfig = new QuizConfig();
         gameMenu = new GameMenu();
         sidebar = new Sidebar();
 
@@ -65,7 +45,6 @@ public final class Zhisuan11core extends JavaPlugin {
         clearDropItems = new ClearDropItems();
         checkPing = new CheckPing();
 
-        databaseConfig = new DatabaseConfig();
         severTask = new SeverTask();
     }
 

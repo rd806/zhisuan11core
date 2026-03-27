@@ -1,4 +1,4 @@
-package org.zhisuan11.core;
+package org.rd806.zhisuan11.core;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.scoreboard.*;
-import org.zhisuan11.Zhisuan11core;
+import org.rd806.zhisuan11.Zhisuan11core;
 
 import java.util.Objects;
 

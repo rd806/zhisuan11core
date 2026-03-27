@@ -1,15 +1,15 @@
-package org.zhisuan11.tasks;
+package org.rd806.zhisuan11.tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.zhisuan11.Zhisuan11core;
+import org.rd806.zhisuan11.Zhisuan11core;
 
 public class CheckPing {
     private BukkitTask check;
 
-    public void SendTask() {
+    public void sendTask() {
         if (check != null) {
             check.cancel();
         }

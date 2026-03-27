@@ -1,4 +1,4 @@
-package org.zhisuan11.tasks;
+package org.rd806.zhisuan11.tasks;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -6,7 +6,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Item;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.zhisuan11.Zhisuan11core;
+import org.rd806.zhisuan11.Zhisuan11core;
 
 import java.util.ArrayList;
 import java.util.List;

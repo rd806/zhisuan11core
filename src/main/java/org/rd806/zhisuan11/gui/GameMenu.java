@@ -1,4 +1,4 @@
-package org.zhisuan11.gui;
+package org.rd806.zhisuan11.gui;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -8,23 +8,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import org.zhisuan11.Zhisuan11core;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class GameMenu {
 
-    private final Zhisuan11core plugin = Zhisuan11core.main;
     private final Inventory MainMenu;
     private final Inventory ServerRule;
-    private final Inventory QuizMenu;
 
     public GameMenu() {
         MainMenu = Bukkit.createInventory(null, 27, "主菜单");
         ServerRule = Bukkit.createInventory(null, 27, "服务器守则");
-        QuizMenu = Bukkit.createInventory(null, 45, "欢迎来到Quiz");
     }
 
 
@@ -58,29 +53,6 @@ public class GameMenu {
         AddItemToMenu(ServerRule, 26, Material.REDSTONE_BLOCK, "关于插件", "点击访问插件仓库");
 
         return ServerRule;
-    }
-
-    // Quiz界面
-    public Inventory createQuizMenu(Player player) {
-        // 左上角
-        AddItemToMenu(QuizMenu, 0, Material.CRAFTING_TABLE, "有奖问答！",
-                "点击对应的选项方块回答问题",
-                "答对有奖！");
-        // 设置题目
-        AddItemToMenu(QuizMenu, 4, Material.PAPER, "§r题目", "§r§b" + plugin.quiz.question);
-        // 设置奖品
-        AddItemToMenu(QuizMenu, 8, plugin.quiz.reward.getType(), "§r奖品", "货真价实！");
-        // 设置选项
-        AddItemToMenu(QuizMenu, 19, Material.RED_WOOL, "§r选项A",  "§r§b" + plugin.quiz.options.get(0));
-        AddItemToMenu(QuizMenu, 21, Material.YELLOW_WOOL, "§r选项B", "§r§b" + plugin.quiz.options.get(1));
-        AddItemToMenu(QuizMenu, 23, Material.BLUE_WOOL, "§r选项C", "§r§b" + plugin.quiz.options.get(2));
-        AddItemToMenu(QuizMenu, 25, Material.GREEN_WOOL, "§r选项D", "§r§b" + plugin.quiz.options.get(3));
-        // 玩家信息（左下角）
-        QuizMenu.setItem(36, createPlayerHead(player));
-        // 插件信息（右下角）
-        AddItemToMenu(QuizMenu, 44, Material.REDSTONE_BLOCK, "关于插件", "点击访问插件仓库");
-
-        return QuizMenu;
     }
 
     // 向菜单中添加物品

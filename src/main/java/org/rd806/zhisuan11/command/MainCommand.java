@@ -1,4 +1,4 @@
-package org.zhisuan11.command;
+package org.rd806.zhisuan11.command;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -8,14 +8,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-import org.zhisuan11.core.JoinItem;
-import org.zhisuan11.Zhisuan11core;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.rd806.zhisuan11.core.JoinItem;
+import org.rd806.zhisuan11.Zhisuan11core;
 
 
 public class MainCommand implements CommandExecutor {
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NonNull CommandSender sender, @NonNull Command command, @NonNull String label, String @NonNull [] args) {
 
         Player player = null;
 
@@ -58,11 +59,6 @@ public class MainCommand implements CommandExecutor {
                 Inventory MainMenu = Zhisuan11core.main.gameMenu.createMainMenu(player);
                 Zhisuan11core.main.gameMenu.openMenu(player, MainMenu);
                 return true;
-            } else if (args[1].equals("quiz")) {
-                //  /zs menu quiz
-                Inventory QuizMenu = Zhisuan11core.main.gameMenu.createQuizMenu(player);
-                Zhisuan11core.main.gameMenu.openMenu(player, QuizMenu);
-                return true;
             }
         }
 
@@ -94,34 +90,6 @@ public class MainCommand implements CommandExecutor {
             JoinItem joinItem = new JoinItem();
             joinItem.giveFirstJoinItems(targetPlayer);
             return true;
-        }
-
-        //  /zs quiz ...
-        if (args[0].equals("quiz")) {
-            switch (args[1]) {
-                case "send" -> {
-                    if (args.length == 3) {
-                        //  /zs quiz send <num>
-                        int num = Integer.parseInt(args[2]);
-                        Zhisuan11core.main.quiz.SendSpecificQuiz(num);
-                        return true;
-                    }
-                    //  /zs quiz send ...
-                    Zhisuan11core.main.quiz.SendQuiz();
-                    return true;
-                }
-                case "show" -> {
-                    //  /zs quiz show
-                    sender.sendMessage("当前题库中共有" + Zhisuan11core.main.quizConfig.getMaxNum() + "题");
-                    return true;
-                }
-                case "reload" -> {
-                    Zhisuan11core.main.quiz.initialQuiz();
-                    sender.sendMessage("题库初始化成功！");
-                    return true;
-                }
-            }
-            return false;
         }
 
         //  /zs cleardropitems ...

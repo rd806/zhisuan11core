@@ -1,4 +1,4 @@
-package org.zhisuan11.core;
+package org.rd806.zhisuan11.core;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
-import org.zhisuan11.Zhisuan11core;
+import org.rd806.zhisuan11.Zhisuan11core;
 
 import java.util.Objects;
 
